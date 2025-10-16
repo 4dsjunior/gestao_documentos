@@ -108,7 +108,10 @@ export function exportToPDF(contractText: string, type: 'domestico' | 'rural' | 
         <div class="contract-content">${contractText.replace(/\n/g, '<br>')}</div>
         <script>
           window.onload = function() {
+            window.focus();
             window.print();
+            window.onafterprint = window.close;
+            window.onblur = window.close; // Fallback for some browsers
           };
         </script>
       </body>
@@ -124,12 +127,20 @@ export function parseCSV(csvContent: string): ContractData | null {
     const lines = csvContent.trim().split('\n');
     if (lines.length < 2) return null;
 
-    const headers = lines[0].split(',');
-    const values = lines[1].split(',').map(v => v.replace(/^"|"$/g, '').replace(/""/g, '"'));
+    const headers = lines[0].split(',').map(h => h.trim());
+    
+    // This regex handles quoted fields, including commas inside them
+    const values = lines[1].match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g)
+      ?.map(v => v.replace(/^"|"$/g, '').replace(/""/g, '"')) || [];
+
+    if (headers.length !== values.length) {
+      console.error('CSV header and value count mismatch.');
+      return null;
+    }
 
     const data: ContractData = {};
     headers.forEach((header, index) => {
-      data[header.trim()] = values[index]?.trim() || '';
+      data[header] = values[index] || '';
     });
 
     return data;

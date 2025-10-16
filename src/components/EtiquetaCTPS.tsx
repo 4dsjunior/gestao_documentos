@@ -12,12 +12,22 @@ export default function EtiquetaCTPS({ data }: EtiquetaCTPSProps) {
     <div className="etiqueta-container">
       <style>{`
         @media print {
+          *, *::before, *::after {
+            box-sizing: border-box;
+          }
+
+          html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0 !important;
+            padding: 0 !important;
+            visibility: visible;
+          }
+
           body * {
             visibility: hidden;
           }
-
-          .etiqueta-container,
-          .etiqueta-container * {
+          .etiqueta-container, .etiqueta-container * {
             visibility: visible;
           }
 
@@ -26,11 +36,10 @@ export default function EtiquetaCTPS({ data }: EtiquetaCTPSProps) {
             left: 0;
             top: 0;
             width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 0;
-            margin: 0;
           }
 
           .etiqueta-ctps {
@@ -40,9 +49,9 @@ export default function EtiquetaCTPS({ data }: EtiquetaCTPSProps) {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 9pt;
             line-height: 1.2;
-            border: 1px solid #000;
+            overflow: hidden;
             box-sizing: border-box;
-            page-break-after: always;
+            border: 1px solid #000;
             background: white;
             color: black;
             display: flex;
@@ -218,7 +227,7 @@ export default function EtiquetaCTPS({ data }: EtiquetaCTPSProps) {
         </div>
 
         <div className="etiqueta-ctps-rodape">
-          Emitido em: {etiqueta.dataEmissao}
+          
         </div>
       </div>
     </div>
