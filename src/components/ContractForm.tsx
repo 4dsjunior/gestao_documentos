@@ -167,11 +167,11 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
+    <div className="min-h-screen py-8 px-4">
       <div className="max-w-4xl mx-auto">
         <button
           onClick={onBack}
-          className="flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors"
+          className="flex items-center text-pale-sky hover:text-oxford-blue mb-6 transition-colors"
         >
           <ArrowLeft className="w-5 h-5 mr-2" />
           Voltar
@@ -179,10 +179,10 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
 
         <div className="bg-white rounded-lg shadow-md p-8">
           <div className="flex justify-between items-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900">{getContractTitle()}</h1>
-            <label className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg cursor-pointer transition-colors">
-              <Upload className="w-5 h-5 text-gray-700" />
-              <span className="text-sm font-medium text-gray-700">Importar CSV</span>
+            <h1 className="text-3xl font-bold text-oxford-blue">{getContractTitle()}</h1>
+            <label className="flex items-center gap-2 px-4 py-2 bg-water-leaf hover:bg-pelorous rounded-lg cursor-pointer transition-colors">
+              <Upload className="w-5 h-5 text-pale-sky" />
+              <span className="text-sm font-medium text-pale-sky">Importar CSV</span>
               <input
                 type="file"
                 accept=".csv"
@@ -194,25 +194,25 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
 
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="space-y-6">
-              <h2 className="text-xl font-semibold text-gray-900 border-b pb-2">
+              <h2 className="text-xl font-semibold text-oxford-blue border-b pb-2">
                 Dados do Empregador
               </h2>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-pale-sky mb-2">
                   Nome Completo
                 </label>
                 <input
                   type="text"
                   value={formData.EMPREGADOR_NOME}
                   onChange={(e) => handleInputChange('EMPREGADOR_NOME', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-pale-sky mb-2">
                   {type === 'urbano' ? 'CPF ou CNPJ' : 'CPF/CAEPF'}
                 </label>
                 <input
@@ -225,7 +225,7 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
                     else if (cleaned.length === 14) handleCNPJBlur('EMPREGADOR_CPF');
                   }}
                   placeholder={type === 'urbano' ? '000.000.000-00 ou 00.000.000/0000-00' : '000.000.000-00'}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                   required
                 />
                 {errors.EMPREGADOR_CPF && (
@@ -237,39 +237,39 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-pale-sky mb-2">
                   Endereco Completo
                 </label>
                 <input
                   type="text"
                   value={formData.EMPREGADOR_ENDERECO}
                   onChange={(e) => handleInputChange('EMPREGADOR_ENDERECO', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                   required
                 />
               </div>
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-xl font-semibold text-gray-900 border-b pb-2">
+              <h2 className="text-xl font-semibold text-oxford-blue border-b pb-2">
                 Dados do Empregado
               </h2>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-pale-sky mb-2">
                   Nome Completo
                 </label>
                 <input
                   type="text"
                   value={formData.EMPREGADO_NOME}
                   onChange={(e) => handleInputChange('EMPREGADO_NOME', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-pale-sky mb-2">
                   CPF
                 </label>
                 <input
@@ -278,7 +278,7 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
                   onChange={(e) => handleInputChange('EMPREGADO_CPF', e.target.value)}
                   onBlur={() => handleCPFBlur('EMPREGADO_CPF')}
                   placeholder="000.000.000-00"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                   required
                 />
                 {errors.EMPREGADO_CPF && (
@@ -290,27 +290,27 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-pale-sky mb-2">
                   Endereco Completo
                 </label>
                 <input
                   type="text"
                   value={formData.EMPREGADO_ENDERECO}
                   onChange={(e) => handleInputChange('EMPREGADO_ENDERECO', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                   required
                 />
               </div>
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-xl font-semibold text-gray-900 border-b pb-2">
+              <h2 className="text-xl font-semibold text-oxford-blue border-b pb-2">
                 Dados do Contrato
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-pale-sky mb-2">
                     Cargo
                   </label>
                   <input
@@ -318,13 +318,13 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
                     value={formData.CARGO}
                     onChange={(e) => handleInputChange('CARGO', e.target.value)}
                     placeholder={type === 'domestico' ? 'Empregado domestico nos servicos gerais' : type === 'rural' ? 'Operario Rural' : 'Cargo do empregado'}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-pale-sky mb-2">
                     CBO
                   </label>
                   <input
@@ -332,7 +332,7 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
                     value={formData.CBO}
                     onChange={(e) => handleInputChange('CBO', e.target.value)}
                     placeholder="512105"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                     required
                   />
                 </div>
@@ -340,20 +340,20 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-pale-sky mb-2">
                     Data de Admissao
                   </label>
                   <input
                     type="date"
                     value={formData.DATA_ADMISSAO}
                     onChange={(e) => handleInputChange('DATA_ADMISSAO', e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-pale-sky mb-2">
                     Salario Base (R$)
                   </label>
                   <input
@@ -362,7 +362,7 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
                     value={formData.SALARIO_BASE}
                     onChange={(e) => handleInputChange('SALARIO_BASE', e.target.value)}
                     placeholder="1518.00"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                     required
                   />
                 </div>
@@ -370,13 +370,13 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-pale-sky mb-2">
                     Unidade de Pagamento
                   </label>
                   <select
                     value={formData.UNIDADE_PAGAMENTO}
                     onChange={(e) => handleInputChange('UNIDADE_PAGAMENTO', e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                     required
                   >
                     <option value="Por Mes">Por Mes</option>
@@ -387,7 +387,7 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-pale-sky mb-2">
                     Horas Semanais
                   </label>
                   <input
@@ -395,20 +395,20 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
                     value={formData.HORAS_SEMANAIS}
                     onChange={(e) => handleInputChange('HORAS_SEMANAIS', e.target.value)}
                     placeholder="44"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                     required
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-pale-sky mb-2">
                   Tipo de Jornada
                 </label>
                 <select
                   value={formData.TIPO_JORNADA}
                   onChange={(e) => handleInputChange('TIPO_JORNADA', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                   required
                 >
                   <option value="Tipo 1 - Jornada com horario diario e folga fixa">Tipo 1 - Jornada com horario diario e folga fixa</option>
@@ -422,38 +422,38 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-pale-sky mb-2">
                     Nome do Local de Trabalho
                   </label>
                   <input
                     type="text"
                     value={formData.LOCAL_TRABALHO_NOME}
                     onChange={(e) => handleInputChange('LOCAL_TRABALHO_NOME', e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-pale-sky mb-2">
                     Inscricao do Local
                   </label>
                   <input
                     type="text"
                     value={formData.LOCAL_TRABALHO_INSCRICAO}
                     onChange={(e) => handleInputChange('LOCAL_TRABALHO_INSCRICAO', e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                   />
                 </div>
               </div>
             </div>
 
             <div className="space-y-6">
-              <h2 className="text-xl font-semibold text-gray-900 border-b pb-2">
+              <h2 className="text-xl font-semibold text-oxford-blue border-b pb-2">
                 Dados de Assinatura
               </h2>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-pale-sky mb-2">
                   Foro/Comarca (Local de Assinatura)
                 </label>
                 <input
@@ -461,14 +461,14 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
                   value={formData.FORO_COMARCA}
                   onChange={(e) => handleInputChange('FORO_COMARCA', e.target.value)}
                   placeholder="Cidade/Estado"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-cadet-blue rounded-lg focus:ring-2 focus:ring-pelorous focus:border-transparent"
                   required
                 />
-                <p className="text-sm text-gray-500 mt-1">Este valor sera usado como local de assinatura e comarca</p>
+                <p className="text-sm text-pale-sky mt-1">Este valor sera usado como local de assinatura e comarca</p>
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <p className="text-sm text-blue-800">
+              <div className="bg-water-leaf border border-pelorous rounded-lg p-4">
+                <p className="text-sm text-cello">
                   <strong>Nota:</strong> A data de assinatura sera automaticamente preenchida com a data de admissao
                 </p>
               </div>
@@ -477,7 +477,7 @@ export default function ContractForm({ type, onBack, onSubmit, initialData }: Co
             <div className="flex justify-end pt-6">
               <button
                 type="submit"
-                className="px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
+                className="px-8 py-3 bg-big-stone text-white rounded-lg hover:bg-cello transition-colors font-medium"
               >
                 Gerar Pre-visualizacao
               </button>

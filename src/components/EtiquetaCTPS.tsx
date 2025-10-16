@@ -12,40 +12,51 @@ export default function EtiquetaCTPS({ data }: EtiquetaCTPSProps) {
     <div className="etiqueta-container">
       <style>{`
         @media print {
-          *, *::before, *::after {
+          * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
           }
 
+          @page {
+            size: 7.5cm 7.5cm;
+            margin: 0;
+          }
+
           html, body {
-            width: 100%;
-            height: 100%;
+            width: 7.5cm;
+            height: 7.5cm;
             margin: 0 !important;
             padding: 0 !important;
-            visibility: visible;
+            overflow: hidden;
           }
 
           body * {
             visibility: hidden;
           }
-          .etiqueta-container, .etiqueta-container * {
+
+          .etiqueta-container {
+            visibility: visible;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 7.5cm;
+            height: 7.5cm;
+            margin: 0;
+            padding: 0;
+          }
+
+          .etiqueta-container * {
             visibility: visible;
           }
 
-          .etiqueta-container {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-
           .etiqueta-ctps {
-            width: 7.5cm;
-            height: 7.5cm;
+            width: 7.5cm !important;
+            height: 7.5cm !important;
+            max-width: 7.5cm;
+            max-height: 7.5cm;
             padding: 3mm;
+            margin: 0;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 9pt;
             line-height: 1.2;
@@ -57,6 +68,8 @@ export default function EtiquetaCTPS({ data }: EtiquetaCTPSProps) {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            page-break-after: avoid;
+            page-break-inside: avoid;
           }
 
           .etiqueta-ctps-header {

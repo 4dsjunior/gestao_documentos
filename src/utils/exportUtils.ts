@@ -110,8 +110,25 @@ export function exportToPDF(contractText: string, type: 'domestico' | 'rural' | 
           window.onload = function() {
             window.focus();
             window.print();
-            window.onafterprint = window.close;
-            window.onblur = window.close; // Fallback for some browsers
+            
+            // Fecha a janela após imprimir/cancelar
+            setTimeout(function() {
+              window.close();
+            }, 100);
+            
+            // Fallback para navegadores diferentes
+            window.onafterprint = function() {
+              window.close();
+            };
+            
+            // Detecta cancelamento da impressão (ESC)
+            var printInProgress = true;
+            window.matchMedia('print').addListener(function(mql) {
+              if (!mql.matches && printInProgress) {
+                printInProgress = false;
+                window.close();
+              }
+            });
           };
         </script>
       </body>
