@@ -1,0 +1,39 @@
+{
+  "contrato_trabalho_urbano": {
+    "empregador": {
+      "nome_completo": "[Nome Completo do Empregador]",
+      "cpf_cnpj": "[CPF/CNPJ do Empregador]",
+      "endereco": "[Endereço Completo do Empregador]"
+    },
+    "empregado": {
+      "nome": "[Nome Completo do Empregado]",
+      "cpf": "[CPF do Empregado]",
+      "endereco": "[Endereço Completo do Empregado]"
+    },
+    "contrato": {
+      "cargo": "[Cargo do Empregado]",
+      "cbo": "[CBO do Cargo]",
+      "tipo_contrato": "Prazo indeterminado",
+      "data_admissao": "[Data de Admissão]",
+      "salario_base": "[Salário Base]",
+      "unidade_pagamento": "[Unidade de Pagamento]",
+      "horas_semanais": "[Horas Semanais]",
+      "tipo_jornada": "[Tipo de Jornada]",
+      "regime_trabalhista": "CLT - Consolidação das Leis de Trabalho e legislações trabalhistas específicas",
+      "regime_previdenciario": "Regime Geral de Previdência Social - RGPS",
+      "natureza_atividade": "Trabalho Urbano",
+      "cnpj_sindicato": "[CNPJ do Sindicato]" 
+    },
+    "local_trabalho": {
+      "nome": "[Nome do Local de Trabalho]",
+      "inscricao": "[Número de Inscrição do Local de Trabalho]"
+    },
+    "disposicoes_gerais": {
+      "local_assinatura": "[Local]",
+      "data_assinatura_dia": "[Dia]",
+      "data_assinatura_mes": "[Mês]",
+      "data_assinatura_ano": "[Ano]",
+      "foro_comarca": "[Cidade/Estado]"
+    }
+  }
+}

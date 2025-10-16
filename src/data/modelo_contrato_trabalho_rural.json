@@ -1,0 +1,37 @@
+{
+  "contrato_trabalho_rural": {
+    "empregador": {
+      "nome_completo": "[Nome Completo do Empregador]",
+      "cpf_caepf": "009.609.787-63",
+      "endereco": "[Endereço Completo do Empregador]",
+      "nome_produtor_rural": "Produtor Rural",
+      "inscricao_produtor_rural": "009.609.787/001-92"
+    },
+    "empregado": {
+      "nome": "VITOR JUNIOR PEREIRA DE ANDRADE",
+      "cpf": "159.446.667-06",
+      "endereco": "[Endereço Completo do Empregado]"
+    },
+    "contrato": {
+      "cargo": "Operário Rural",
+      "cbo": "623015 - Trabalhador de pecuária polivalente",
+      "tipo_contrato": "Prazo indeterminado",
+      "data_admissao": "01/10/2025",
+      "salario_base": 1518.00,
+      "unidade_pagamento": "Por Mês",
+      "horas_semanais": 44.00,
+      "tipo_jornada": "Jornada com horário diário fixo e folga fixa (no domingo)",
+      "regime_trabalhista": "CLT - Consolidação das Leis de Trabalho e legislações trabalhistas específicas",
+      "regime_previdenciario": "Regime Geral de Previdência Social - RGPS",
+      "natureza_atividade": "Trabalho Rural",
+      "cnpj_sindicato": "27.102.094/0001-66"
+    },
+    "disposicoes_gerais": {
+      "local_assinatura": "[Local]",
+      "data_assinatura_dia": "[Dia]",
+      "data_assinatura_mes": "[Mês]",
+      "data_assinatura_ano": "[Ano]",
+      "foro_comarca": "[Cidade/Estado]"
+    }
+  }
+}

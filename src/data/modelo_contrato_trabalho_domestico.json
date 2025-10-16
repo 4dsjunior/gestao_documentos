@@ -1,0 +1,35 @@
+{
+  "contrato_trabalho_domestico": {
+    "empregador": {
+      "nome_completo": "FRANCIS SAADI JUNGER",
+      "cpf": "031.866.167-51",
+      "endereco": "[Endereço Completo do Empregador]"
+    },
+    "empregado": {
+      "nome": "SUELEN MARINS KLAIM",
+      "cpf": "129.606.077-24",
+      "endereco": "[Endereço Completo do Empregado]"
+    },
+    "contrato": {
+      "cargo": "Empregado doméstico nos serviços gerais",
+      "cbo": "512105 - Empregado doméstico nos serviços gerais",
+      "tipo_contrato": "Prazo indeterminado",
+      "data_admissao": "01/11/2017",
+      "salario_base": 1518.00,
+      "unidade_pagamento": "Por Mês",
+      "horas_semanais": 44,
+      "tipo_jornada": "Jornada com horário diário fixo e folga fixa (no domingo)",
+      "regime_trabalhista": "CLT - Consolidação das Leis de Trabalho e legislações trabalhistas específicas",
+      "regime_previdenciario": "Regime Geral de Previdência Social - RGPS",
+      "natureza_atividade": "Trabalho Urbano",
+      "cnpj_sindicato": "37.115.367/0035-00"
+    },
+    "disposicoes_gerais": {
+      "local_assinatura": "[Local]",
+      "data_assinatura_dia": "[Dia]",
+      "data_assinatura_mes": "[Mês]",
+      "data_assinatura_ano": "[Ano]",
+      "foro_comarca": "[Cidade/Estado]"
+    }
+  }
+}
